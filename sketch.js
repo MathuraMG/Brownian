@@ -5,7 +5,7 @@
  */
 
 var num = 100;
-var range = 10;
+var range = 20;
 var numLines = 50;
 
 var ax = [];
@@ -25,7 +25,7 @@ var lines = [];
 function setup() {
   createCanvas(windowWidth, windowHeight);
   blendMode(LIGHTEST);
-
+  background(0);
 
   //frameRate(30);
   l = new elt();
@@ -106,10 +106,13 @@ function curvesBW(lines1, lines2, i) {
 
     l.ax[a] = lines1.ax[a] + ((lines2.ax[a] - lines1.ax[a]) / numLines) * i;
     l.ay[a] = lines1.ay[a] + ((lines2.ay[a] - lines1.ay[a]) / numLines) * i;
+    l.lax[a] = lines1.lax[a] + ((lines2.lax[a] - lines1.lax[a]) / numLines) * i;
+    l.lay[a] = lines1.lay[a] + ((lines2.lay[a] - lines1.lay[a]) / numLines) * i;
     strokeWeight(0.5);
-    stroke(random(200, 255), random(20, 75), random(20, 75), 50);
+    stroke(random(255), random(255), random(255), 50);
     noFill();
     line(l.ax[a], l.ay[a], l.ax[a - 1], l.ay[a - 1]);
+    line(l.lax[a], l.lay[a], l.lax[a - 1], l.lay[a - 1]);
     //arc(l.ax[a], l.ay[a], dist(l.ax[a - 1], l.ay[a - 1],l.ax[a], l.ay[a]), random(5,10),random(0,0.5), random(0.5,1));
     //}
     //lines = l;
