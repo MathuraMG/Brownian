@@ -2,7 +2,7 @@ function elt() {
   this.ax = [];
   this.ay = [];
   this.init = function() {
-    this.ax[0] =-80; //width/2;
+    this.ax[0] =-100; //width/2;
     this.ay[0] = height / 2+ random(-range/1.2, range/1.2);
   }
   this.drawLine = function() {
