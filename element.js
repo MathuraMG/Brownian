@@ -2,8 +2,8 @@ function elt() {
   this.ax = [];
   this.ay = [];
   this.init = function() {
-    this.ax[0] = 0; //width/2;
-    this.ay[0] = height / 2;
+    this.ax[0] =-80; //width/2;
+    this.ay[0] = height / 2+ random(-range, range);
   }
   this.drawLine = function() {
   num = this.ax.length;
@@ -20,8 +20,7 @@ function elt() {
     this.ax[num - 1] = constrain(this.ax[num - 1], 0, width);
     this.ay[num - 1] = constrain(this.ay[num - 1], 0, height);
     // Draw a line connecting the points
-    var val = color(0, 0, 0, 50); //float(i) / a.ax.length * 204.0 + 51;
-    stroke(val);
+    
     num = this.ax.length;
     line(this.ax[num - 1], this.ay[num - 1], this.ax[num - 2], this.ay[num - 2]);
   }
