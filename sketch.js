@@ -55,7 +55,21 @@ function setup() {
   //curvesBW(lines4,lines1);
   ctx = canvas.getContext('2d');
 
-
+  var heading = createP('Listen to the motion - Watch the music.');
+  heading.style('color', '#ffffff');
+  heading.position(10,10);
+  heading.style('font-family','Raleway');
+  heading.style('font-weight','200');
+  heading.style('font-size','24px');
+  
+  var credits = createA( 'http://soundcloud.com/harimohanraj89',' Music credits: Hari mohanraj ');
+  credits.style('color', '#ffffff');
+  credits.style('color', '#ffffff');
+  credits.position(10,windowHeight - 20);
+  credits.style('font-family','Raleway');
+  credits.style('font-weight','200');
+  credits.style('font-size','12px');
+  
   for (var i = 0; i < totNotes; i++) {
     vol[i] = 0;
     notes[i].loop();
@@ -188,14 +202,14 @@ function countPixels() {
 
     }
   }
-  print(countPixel);
-  if (countPixel < 1500) {
-    if (countPixel > 1000 && countPixel < 1500) {
-      notes[2].amp((countPixel - 1000) / 1000);
-    } else if (countPixel > 500&& countPixel < 1000) {
-      notes[1].amp((countPixel - 500) / 1000);
-    } else if (countPixel > 0&& countPixel < 500) {
-      notes[0].amp((countPixel - 0) / 1000);
+  
+  if (countPixel < 1000) {
+    if (countPixel > 700 && countPixel < 1000) {
+      notes[2].amp((countPixel - 700) / 700);
+    } else if (countPixel > 300 && countPixel < 700) {
+      notes[1].amp((countPixel - 300) / 700);
+    } else if (countPixel > 0 && countPixel < 300) {
+      notes[0].amp((countPixel - 0) / 700);
     }
   }
 }
